@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="color_bian">
+        <item>#FFEDED</item>
+        <item>#FFFFFF</item>
+    </array>
+    <!--WheelPicker滚轮控件默认值-->
+    <string-array name="WheelArrayDefault">
+        <item>item 1</item>
+        <item>item 2</item>
+        <item>item 3</item>
+        <item>item 4</item>
+        <item>item 5</item>
+    </string-array>
+</resources>

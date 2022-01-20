@@ -1,0 +1,88 @@
+//import gnu.trove.TPrimitiveHash
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'com.dream.version'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    implementation Kotlin.kotlinStdlib
+    implementation AndroidX.appcompat//'com.android.support:appcompat-v7:28.0.0'
+
+    api AndroidX.lifecyle.viewModelKtx
+    api AndroidX.activityKtx
+    api AndroidX.navigation.fragmentKtx
+    api AndroidX.lifecyle.lifecycle_ext
+
+    api ThreeParty.tencent.Mmkv
+
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.androidJunit
+    androidTestImplementation Testing.espresso
+
+    api Google.coil
+    api Google.coil_gif
+    api Google.flexBox
+    api Google.material
+
+
+    api ThreeParty.UTILCODEX
+    api ThreeParty.baseRecyclerViewAdapterHelper
+    api ThreeParty.mdDialog.materialDialogsLifecycle
+    api ThreeParty.rxhttp.base
+    api ThreeParty.OkHttp //rxhttp v2.2.2版本起，需要手动依赖okhttp
+    api ThreeParty.rxhttp.coroutine
+    api ThreeParty.liveEventBus
+    api ThreeParty.titleBar
+
+    implementation ThreeParty.RWidgetHelper
+    implementation ThreeParty.luBan
+
+
+    api ThreeParty.mdDialog.materialDialogsLifecycle
+    api ThreeParty.mdDialog.materialDialogsCore
+    implementation ThreeParty.LOTTIE
+
+    implementation ThreeParty.dataMock
+}

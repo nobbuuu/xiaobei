@@ -1,2 +1,5 @@
 rootProject.name = "Xiaobei"
 include ':app'
+includeBuild("version")
+include ':base'
+include ':launcher'

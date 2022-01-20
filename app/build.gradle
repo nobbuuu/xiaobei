@@ -1,28 +1,65 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.dream.version'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
 
     defaultConfig {
         applicationId "com.dream.xiaobei"
-        minSdkVersion 16
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfigs {
+            release {
+                storeFile file('./xb_sign.jks')
+                keyAlias 'xb'
+                keyPassword 'xb888888'
+                storePassword 'xb888888'
+            }
+            debug {
+                storeFile file('./xb_sign.jks')
+                keyAlias 'xb'
+                keyPassword 'xb888888'
+                storePassword 'xb888888'
+            }
+        }
+        flavorDimensions "env"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64", "x86"
+        }
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
             minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -30,15 +67,93 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    productFlavors {
+        dev {
+            buildConfigField "String", "APP_TYPE", "\"test\""
+            resValue "string", "app_name", "小呗"
+        }
+
+        sit {
+            buildConfigField "String", "APP_TYPE", "\"sit\""
+            resValue "string", "app_name", "小呗"
+        }
+
+        product {
+            buildConfigField "String", "APP_TYPE", "\"product\""
+            resValue "string", "app_name", "小呗"
+        }
+    }
+
+    //  不需要viewBinding的页面  tools:viewBindingIgnore="true"
+    buildFeatures {
+        viewBinding true
+    }
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    implementation project(path: ':base')
+    implementation project(path: ':launcher')
+
+    implementation Kotlin.kotlinStdlib
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
+    implementation Google.material
+    implementation Google.zxing
+    implementation AndroidX.constraintlayout
+    implementation AndroidX.fragment.fragmentKtx
+    implementation AndroidX.navigation.fragmentKtx
+    implementation AndroidX.navigation.uiKtx
+    implementation AndroidX.lifecyle.lifecycle_ext
+    implementation AndroidX.lifecyle.liveDataKtx
+    implementation AndroidX.lifecyle.viewModelKtx
+
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.androidJunit
+    androidTestImplementation Testing.espresso
+
+    kapt ThreeParty.rxhttp.compiler
+    implementation ThreeParty.RWidgetHelper
+    implementation ThreeParty.smartRefresh.kernel
+    implementation ThreeParty.smartRefresh.header
+    implementation ThreeParty.smartRefresh.footer
+    implementation ThreeParty.smartRefresh.classicHeader
+    implementation ThreeParty.LOTTIE
+    implementation ThreeParty.ConsecutiveScrollerLayout
+    implementation ThreeParty.XPopUp
+    implementation ThreeParty.MagicIndicator
+    implementation ThreeParty.AutoSize
+    implementation ThreeParty.Glide
+    implementation ThreeParty.MarqueeView
+
+    implementation ThreeParty.quicklogin
+
+
+    implementation ThreeParty.luBan
+    implementation ThreeParty.tencent.WeChatSdk
+
+    implementation ThreeParty.BannerViewPager
+    implementation ThreeParty.permissionSupportByGuoLin
+
+    api Google.coil
+    api Google.coil_gif
+//    implementation ThreeParty.tencent.Bugly
+//    implementation ThreeParty.tencent.BuglyNative
+
+    implementation ThreeParty.ultraViewPager
+    implementation ThreeParty.jwt
+    implementation ThreeParty.dataMock
+
+    implementation ThreeParty.qiyuSDK
+    implementation ThreeParty.sensorDataSdk
+    debugImplementation ThreeParty.dokit.dokitx
+    releaseImplementation ThreeParty.dokit.dokitxNoOp
 }

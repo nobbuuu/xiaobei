@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+10% — 1A
+20% — 33
+30% — 4D
+40% — 66
+50% — 80
+60% — 99
+70% — B3
+80% — CC
+90% — E6
+-->
+
+
+    <!-- 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+    <color name="colorPrimary">#E33E2E</color>
+    <!--状态栏颜色-->
+    <color name="colorPrimaryDark">#E64C3D</color>
+    <!--一般控件的选中效果默认采用该颜色-->
+    <color name="colorAccent">#E64C3D</color>
+    <color name="colorControlNormal">#9a9a9a</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_color_black">#2D3132</color>
+
+    <color name="colorPrimary_press">#90E64C3D</color>
+    <color name="text_color_3">#333333</color>
+    <color name="text_color_6">#666666</color>
+    <color name="text_color_9">#999999</color>
+    <color name="text_color_9A">#9A9A9A</color>
+    <color name="text_norm_black">#2D3132</color>
+    <color name="color_back">#000000</color>
+    <color name="root_bg">#F4F4F5</color>
+    <color name="split_line">#F4F4F4</color>
+    <color name="color_333">#333333</color>
+    <color name="color_gray">#EAE0E0</color>
+    <color name="color_ded">#E4E4E4</color>
+    <color name="color_bbb">#bbbbbb</color>
+    <color name="color_while">#FFFFFF</color>
+    <color name="color_while_20">#CCFFFFFF</color>
+    <color name="color_press_while">#80FFFFFF</color>
+    <color name="color_eee">#eeeeee</color>
+    <color name="color_ece">#ececec</color>
+    <color name="text_norm_gray">#979797</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_D5B">#FFD5B46D</color>
+    <color name="color_D53">#535558</color>
+    <color name="color_D53_40">#66535558</color>
+    <color name="color_E6E6">#E6E6E6</color>
+    <color name="color_d">#DDDDDD</color>
+    <color name="color_333_50">#80333333</color>
+    <color name="th_color_line_dialog_bottom">#F4F4F4</color>
+
+    <color name="color_FFEBEB">#FFEBEB</color>
+</resources>
