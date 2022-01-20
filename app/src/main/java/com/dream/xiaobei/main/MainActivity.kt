@@ -1,4 +1,4 @@
-package com.dream.xiaobei
+package com.dream.xiaobei.main
 
 import android.os.Bundle
 import com.dream.xiaobei.databinding.ActivityMainBinding

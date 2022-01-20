@@ -1,4 +1,4 @@
-package com.dream.xiaobei
+package com.dream.xiaobei.main
 
 import com.tcl.base.common.BaseViewModel
 
