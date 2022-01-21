@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+  10% — 1A
+  20% — 33
+  30% — 4D
+  40% — 66
+  50% — 80
+  60% — 99
+  70% — B3
+  80% — CC
+  90% — E6
+  -->
+
+    <!--以下为公共颜色属性    -->
+    <!-- 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+    <color name="colorPrimary">#E33E2E</color>
+    <!--状态栏颜色-->
+    <color name="colorPrimaryDark">#E64C3D</color>
+    <!--一般控件的选中效果默认采用该颜色-->
+    <color name="colorAccent">#E64C3D</color>
+    <color name="colorControlNormal">#9a9a9a</color>
+    <color name="color_transparent">#00000000</color>
+
+    <!--【黑色】颜色的主色调-->
+    <color name="text_norm_black">#2D3132</color>
+    <!--【灰色色】占位时的灰色-->
+    <color name="text_norm_gray">#EFEFEF</color>
+
+    <!--【半透明黑色】颜色的主色调-->
+    <color name="text_norm_black_alpha">#882D3132</color>
+    <color name="text_norm_black_20">#CC2D3132</color>
+    <color name="text_norm_black_40_alpha">#662D3132</color>
+
+    <!--【红色】颜色的主色调-->
+    <color name="text_main_red_color">#FF4D49</color>
+    <color name="text_red_color_40_alpha">#66FF4D49</color>
+    <color name="text_red_color_60_alpha">#99FF4D49</color>
+
+    <!--【黑色】颜色的第二色调-->
+    <color name="text_black_ec">#1E1C27</color>
+    <!--以上为公共颜色属性    -->
+
+
+    <color name="grey_969698">#969898</color>
+    <color name="grey_f1f1f1">#F1F1F1</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +52,105 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="black_50">#80000000</color>
+    <color name="color_f4f4f4">#F4F4F4</color>
+    <color name="color_f4f4f4_40">#66F4F4F4</color>
+    <color name="color_f4f4f5">#F4F4F5</color>
+    <color name="color_60_2D3">#992D3132</color>
+    <color name="color_40_2D3">#662D3132</color>
+
+
+    <color name="regular_black">#FF2D3132</color>
+    <color name="regular_black2">#992D3132</color>
+    <color name="regular_black_6">#0A2D3132</color>
+    <color name="regular_black_20">#332D3132</color>
+    <color name="regular_black_40">#662D3132</color>
+    <color name="regular_black_60">#992D3132</color>
+    <color name="regular_red">#FFE64C3D</color>
+    <color name="regular_red_10">#1AE64C3D</color>
+    <color name="regular_red_40">#66E64C3D</color>
+    <color name="regular_red_50">#80E64C3D</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="regular_black_heavy_100">#FF333333</color>
+    <color name="regular_black_heavy_50">#80333333</color>
+    <color name="regular_black_heavy_40">#99333333</color>
+    <color name="list_divider">#F4F4F4</color>
+    <color name="list_dividert">#E6E6E6</color>
+
+    <color name="defaut_divider">#FAFAFA</color>
+    <color name="regular_green">#01C581</color>
+    <color name="green_profit">#4BE2AC</color>
+    <color name="red_profit">#F85F69</color>
+    <color name="common_bg">#FFF4F4F4</color>
+    <color name="black_profit">#333333</color>
+    <color name="gray_profit">#99333333</color>
+
+    <color name="greed_4E">#41A98F</color>
+    <color name="color_line_bg">#e5e5e5</color>
+    <color name="regular_black_100">#FF2D3132</color>
+    <color name="gray_999">#999999</color>
+    <color name="colorBlack333">#333333</color>
+    <color name="colorBlack666">#666666</color>
+    <color name="yellow_F9">#F9AB50</color>
+    <color name="yellow_F9_40_alpha">#66F9AB50</color>
+    <color name="yellow_F7">#F7AF34</color>
+
+
+    <!--搜索-->
+    <color name="gray_bg">#F4F4F4</color>
+    <color name="color_2D3132">#2D3132</color>
+    <color name="color_E64C3D">#E64C3D</color>
+    <color name="color_E64C3D_50">#80E64C3D</color>
+
+    <!--收银台与支付-->
+    <color name="line_bg">#E6E6E6</color>
+    <color name="regular_gray_60">#99818384</color>
+    <color name="color_E85F53">#E85F53</color>
+    <color name="color_EFEFEF">#EFEFEF</color>
+    <color name="color_D8D8D8">#D8D8D8</color>
+
+    <!-- 发票管理-->
+    <color name="color_E64C3D_20">#33E64C3D</color>
+    <color name="color_F7AF34">#F7AF34</color>
+    <color name="color_F7AF34_40">#66F7AF34</color>
+    <color name="color_D62222">#D62222</color>
+    <color name="color_D62222_60">#99D62222</color>
+
+    <!--设置-->
+    <color name="color_regular_20">#332D3132</color>
+    <color name="color_regular_40">#662D3132</color>
+    <color name="color_regular_60">#992D3132</color>
+    <color name="main_red_color_40">#66FF4D49</color>
+    <color name="color_74">#747474</color>
+    <color name="yellow_10_aphle">#1AF9AB50</color>
+
+    <color name="pink_f5">#FFF5F5</color>
+
+    <color name="epay_transparent">#00000000</color>
+    <color name="black33">#333333</color>
+    <color name="color_f8">#FFF8F8</color>
+    <color name="color_ff6460">#ffff6460</color>
+    <color name="color_photo_title">#898989</color>
+    <color name="list_divider_40_alpha">#66F4F4F4</color>
+    <color name="text_norm_black_80_alpha">#CC2D3132</color>
+    <color name="colorOrange8A">#8A5F2A</color>
+    <color name="colorOrangeFE">#FEF6E9</color>
+    <color name="colorGray98">#989898</color>
+    <color name="color_d6">#dddddd</color>
+    <color name="color_fail">#9A9C9C</color>//发票审核失败
+    <color name="color_wait">#F89d20</color>//发票审核中
+    <color name="color_unable">#FBFBFB</color>
+    <color name="color_default">#F4F4F4</color>
+
+    <!--Crop View-->
+    <color name="ucrop_color_default_crop_grid">#80ffffff</color>
+    <color name="ucrop_color_default_crop_frame">#ffffff</color>
+    <color name="ucrop_color_default_dimmed">#8c000000</color>
+    <color name="ucrop_color_default_logo">#4f212121</color>
+    <color name="color_A4">#A4A1A1</color>
+
+    <color name="color_pure_black_50">#80000000</color>
 </resources>

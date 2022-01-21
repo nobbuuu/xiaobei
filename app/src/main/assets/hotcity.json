@@ -1,0 +1,75 @@
+{
+  "hotCitys": [
+    {
+      "chooseProvince": "北京",
+      "chooseCity": "北京市",
+      "cityUuid": "116",
+      "proUuid": "02"
+    },
+    {
+      "chooseProvince": "上海",
+      "chooseCity": "上海市",
+      "cityUuid": "386",
+      "proUuid": "24"
+    },
+    {
+      "chooseProvince": "广东省",
+      "chooseCity": "广州市",
+      "cityUuid": "143",
+      "proUuid": "05"
+    },
+    {
+      "chooseProvince": "广东省",
+      "chooseCity": "深圳市",
+      "cityUuid": "154",
+      "proUuid": "05"
+    },
+    {
+      "chooseProvince": "浙江省",
+      "chooseCity": "杭州市",
+      "cityUuid": "450",
+      "proUuid": "30"
+    },
+    {
+      "chooseProvince": "江苏省",
+      "chooseCity": "南京市",
+      "cityUuid": "288",
+      "proUuid": "15"
+    },
+    {
+      "chooseProvince": "江苏省",
+      "chooseCity": "苏州市",
+      "cityUuid": "290",
+      "proUuid": "15"
+    },
+    {
+      "chooseProvince": "海南省",
+      "chooseCity": "三亚市",
+      "cityUuid": "198",
+      "proUuid": "08"
+    },
+    {
+      "chooseProvince": "湖北省",
+      "chooseCity": "荆州市",
+      "cityUuid": "250",
+      "proUuid": "12"
+    },
+    {
+      "chooseProvince": "湖南省",
+      "chooseCity": "长沙市",
+      "cityUuid": "274",
+      "proUuid": "13"
+    },
+    {
+      "chooseProvince": "重庆",
+      "chooseCity": "重庆市",
+      "cityUuid": "461",
+      "proUuid": "31"
+    },
+    {
+      "chooseProvince": "青海省",
+      "chooseCity": "西宁市",
+      "cityUuid": "346",
+      "proUuid": "20"
+    }
+]}
