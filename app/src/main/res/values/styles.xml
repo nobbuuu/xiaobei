@@ -76,14 +76,6 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="FirstActivity" parent="AppTheme">
-        <item name="android:windowBackground">@mipmap/bg_splash</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:statusBarColor">@color/color_transparent</item>
-        <item name="android:navigationBarColor">@color/transparent</item>
-        <item name="android:scaleType">centerInside</item>
-    </style>
-
     <style name="dialogBase" parent="@android:style/Theme.Dialog">
         <!-- 边框 -->
         <item name="android:windowFrame">@null</item>
@@ -554,16 +546,6 @@
     </style>
 
 
-    <!-- 防止欢迎页白屏或者黑屏，设置图片 -->
-    <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:statusBarColor">@color/color_transparent</item>
-        <item name="android:navigationBarColor">@color/color_transparent</item>
-    </style>
-
     <!--特定字体的UI-->
     <style name="formTitleStyle">
         <item name="android:layout_height">56dp</item>
@@ -583,15 +565,6 @@
         <item name="android:background">@null</item>
         <item name="android:layout_marginEnd">@dimen/dp_16</item>
         <item name="android:minWidth">200dp</item>
-    </style>
-
-    <!--    通用checkbox的样式-->
-    <style name="commonCheckBoxStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/transparent</item>
-        <item name="android:checked">false</item>
-        <item name="android:button">@drawable/selector_checkbox_style</item>
     </style>
 
     <style name="pwdInputStyle">

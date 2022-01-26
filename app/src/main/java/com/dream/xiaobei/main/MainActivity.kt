@@ -1,20 +1,18 @@
 package com.dream.xiaobei.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.blankj.utilcode.util.BarUtils
-import com.blankj.utilcode.util.LogUtils
 import com.dream.xiaobei.R
-import com.dream.xiaobei.app.UserManager
 import com.dream.xiaobei.databinding.ActivityMainBinding
 import com.dream.xiaobei.main.menu.*
 import com.dream.xiaobei.utils.StatusBarUtils
 import com.google.android.material.tabs.TabLayout
 import com.tcl.base.common.ui.BaseActivity
-import com.tcl.base.utils.MmkvUtil
 import com.tcl.tclzjpro.main.FixFragmentNavigator
 
 /**
@@ -24,7 +22,7 @@ import com.tcl.tclzjpro.main.FixFragmentNavigator
  */
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(){
     var lastPos = -1
-    var curPos = MAIN_TAB_HOME
+    var curPos = MAIN_TAB_AREA
     private lateinit var controller: NavController
 
     init {
@@ -32,22 +30,16 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(){
     }
 
     override fun initStateBar(stateBarColor: Int, isLightMode: Boolean, fakeView: View?) {
-        BarUtils.setStatusBarLightMode(this, false)
+        BarUtils.setStatusBarLightMode(this, true)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
         isFullScreen()
         controller = findNavController(R.id.main_container)
-        val fragment =
-            supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment
+        val fragment = supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment
         val navigator = FixFragmentNavigator(this, supportFragmentManager, fragment.id)
         controller.navigatorProvider.addNavigator(navigator)
-        controller.setGraph(R.navigation.mobile_navigation)
-        val decryptGet = MmkvUtil.decryptGet("oaid")
-        LogUtils.iTag(
-            "tanksu",
-            "oaid: $decryptGet phone:${UserManager.userInfoBean?.phone}"
-        )
+        controller.setGraph(R.navigation.main_navigation)
 
         repeat(TabManager.menus.size) {
             val tab = mBinding.mainTab.newTab()
@@ -75,21 +67,14 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(){
         })
         controller.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_home -> {
-                    curPos = MAIN_TAB_HOME
-                    StatusBarUtils().adjustWindow(this, false)
+                R.id.navigation_area -> {
+                    curPos = MAIN_TAB_AREA
                 }
-                R.id.navigation_category -> {
-                    curPos = MAIN_TAB_CATEGORY
-                    BarUtils.setStatusBarLightMode(this, true)
+                R.id.navigation_square -> {
+                    curPos = MAIN_TAB_SQUARE
                 }
-                R.id.navigation_ranks -> {
-                    curPos = MAIN_TAB_RANK
-                    BarUtils.setStatusBarLightMode(this, false)
-                }
-                R.id.navigation_cart -> {
-                    curPos = MAIN_TAB_CART
-                    BarUtils.setStatusBarLightMode(this, true)
+                R.id.navigation_message -> {
+                    curPos = MAIN_TAB_MESSAGE
                 }
                 R.id.navigation_mine -> {
                     curPos = MAIN_TAB_MINE
@@ -98,14 +83,28 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(){
             mBinding.mainTab.selectTab(mBinding.mainTab.getTabAt(curPos))
         }
     }
+    override fun onBlockBackPressed(): Boolean {
+        return curPos != MAIN_TAB_AREA
+    }
 
+    override fun doOnBlockBackPressed() {
+        super.doOnBlockBackPressed()
+        findNavController(R.id.main_container).navigate(R.id.navigation_area)
+    }
+    /**监听新的intent*/
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        intent?.run {
+            val position = getIntExtra(KEY_TAB_POSITION, 0)
+            switchTab(position)
+        }
+    }
     /**根据下标切换页面*/
     private fun switchTab(curPos: Int) {
         when (curPos) {
-            MAIN_TAB_HOME -> controller.navigate(R.id.navigation_home)
-            MAIN_TAB_CATEGORY -> controller.navigate(R.id.navigation_category)
-            MAIN_TAB_RANK -> controller.navigate(R.id.navigation_ranks)
-            MAIN_TAB_CART -> controller.navigate(R.id.navigation_cart)
+            MAIN_TAB_AREA -> controller.navigate(R.id.navigation_area)
+            MAIN_TAB_SQUARE -> controller.navigate(R.id.navigation_square)
+            MAIN_TAB_MESSAGE -> controller.navigate(R.id.navigation_message)
             MAIN_TAB_MINE -> controller.navigate(R.id.navigation_mine)
         }
     }

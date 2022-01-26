@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/navigation_area">
+
+    <fixFragment
+        android:id="@+id/navigation_area"
+        android:name="com.dream.xiaobei.area.AreaFragment"
+        android:label="@string/title_area"
+        tools:layout="@layout/fragment_area" />
+
+    <fixFragment
+        android:id="@+id/navigation_square"
+        android:name="com.dream.xiaobei.square.SquareFragment"
+        android:label="@string/title_square"
+        tools:layout="@layout/fragment_square" />
+    <fixFragment
+        android:id="@+id/navigation_message"
+        android:name="com.dream.xiaobei.message.MessageFragment"
+        android:label="@string/title_message"
+        tools:layout="@layout/fragment_message" />
+
+    <fixFragment
+        android:id="@+id/navigation_mine"
+        android:name="com.dream.xiaobei.mine.MineFragment"
+        android:label="@string/title_mine"
+        tools:layout="@layout/fragment_mine" />
+</navigation>

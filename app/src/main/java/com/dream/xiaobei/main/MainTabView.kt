@@ -24,11 +24,7 @@ class MainTabView @JvmOverloads constructor(
 
     init {
         gravity = Gravity.CENTER
-        val rootView = if (MmkvUtil.decodeBoolean(MmkvConstant.TAP_ICON_CHANGE_KEY) == true) {
-            View.inflate(context, R.layout.view_main_tab_new, null)
-        } else {
-            View.inflate(context, R.layout.view_main_tab, null)
-        }
+        val rootView = View.inflate(context, R.layout.view_main_tab, null)
         lottieIcon = rootView.findViewById(R.id.lottieView)
         tvName = rootView.findViewById(R.id.tabTitle)
         tvUnread = rootView.findViewById(R.id.tabUnreadCount)
