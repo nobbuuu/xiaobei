@@ -7,9 +7,9 @@
 
     <fixFragment
         android:id="@+id/navigation_area"
-        android:name="com.dream.xiaobei.area.AreaFragment"
+        android:name="com.dream.xiaobei.home.ui.HomeFragment"
         android:label="@string/title_area"
-        tools:layout="@layout/fragment_area" />
+        tools:layout="@layout/fragment_home" />
 
     <fixFragment
         android:id="@+id/navigation_square"

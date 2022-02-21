@@ -1,4 +1,4 @@
-package com.dream.xiaobei.area.vm
+package com.dream.xiaobei.home.vm
 
 import com.tcl.base.common.BaseViewModel
 

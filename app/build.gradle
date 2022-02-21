@@ -145,14 +145,11 @@ dependencies {
 
     api Google.coil
     api Google.coil_gif
-//    implementation ThreeParty.tencent.Bugly
-//    implementation ThreeParty.tencent.BuglyNative
 
     implementation ThreeParty.ultraViewPager
     implementation ThreeParty.jwt
     implementation ThreeParty.dataMock
 
-    implementation ThreeParty.qiyuSDK
     implementation ThreeParty.sensorDataSdk
     debugImplementation ThreeParty.dokit.dokitx
     releaseImplementation ThreeParty.dokit.dokitxNoOp
