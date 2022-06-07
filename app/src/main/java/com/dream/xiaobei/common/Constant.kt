@@ -42,7 +42,6 @@ object CategoryDetailConstant {
 }
 
 /**
- * 》》》WARNING《《《
  *
  * mmkv  key不能改动
  *
@@ -73,10 +72,6 @@ object MmkvConstant {
 
     const val AGREE_PRIVACY_VERSION_KEY = "AGREE_PRIVACY_VERSION_KEY" //隐私协议版本
     const val TAP_ICON_CHANGE_KEY = "TAP_ICON_CHANGE_KEY" //隐私协议版本
-}
-
-@Deprecated("待废除，禁用SP，相关尽快迁移mmkv")
-object SPConstant {
 }
 
 object IntentExtraKey {
