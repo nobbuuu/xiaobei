@@ -8,10 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
  * @author: Yzq
  * @date: 2021/6/18
  */
-@Deprecated("没啥用")
 class MyPagerAdapter(fg: FragmentManager) :FragmentStatePagerAdapter(fg){
-
-
 
     override fun getCount(): Int {
         TODO("Not yet implemented")

@@ -38,7 +38,7 @@
             android:src="@drawable/ic_nav__search__n" />
     </RelativeLayout>
 
-    <com.flyco.tablayout.SlidingTabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

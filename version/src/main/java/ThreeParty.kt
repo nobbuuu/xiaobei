@@ -142,7 +142,6 @@ object ThreeParty {
     }
 
     const val jwt = "com.auth0.android:jwtdecode:2.0.0"
-    const val flyTabLayout = "io.github.h07000223:flycoTabLayout:3.0.0"
 
     object Dokit{
         //滴滴开源的APP工具类集合http://xingyun.xiaojukeji.com/docs/dokit#/androidGuide
